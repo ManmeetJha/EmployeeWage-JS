@@ -1,3 +1,4 @@
+
 //UC-1-Check Employee Absent/Present Using Random
 const IS_ABSENT = 0;
 const IS_PART_TIME = 1;
@@ -42,9 +43,24 @@ function getWorkingHours(empCheck) {
             return 0;
     }
 }
-
 let empCheck = Math.floor(Math.random()*10)%3;
 let empHrs = getWorkingHours(empCheck);
 let empWage = empHrs*WAGE_PER_HOUR;
 console.log("Emp hours: "+empHrs);
 console.log("Emp wage: "+empWage);
+
+
+//UC4-Calculate_Monthly_Wage_of_Employee
+const NUM_OF_WORKING_DAYS = 20;
+
+let totalEmpHrs = 0;
+for(day=0;day<NUM_OF_WORKING_DAYS;day++){
+    let empCheck = Math.floor(Math.random()*10)%3;
+    totalEmpHrs = totalEmpHrs+getWorkingHours(empCheck);
+}
+
+let empWage = totalEmpHrs*WAGE_PER_HOUR;
+
+console.log("Emp hours: "+totalEmpHrs);
+console.log("Emp wage: "+empWage)
+
