@@ -31,3 +31,5 @@ switch(empCheck){
 }
 let empWage = empHrs*WAGE_PER_HOUR;
 console.log("Emp wage = "+empWage)
+}
+
