@@ -1,5 +1,4 @@
 //UC-1-Check Employee Absent/Present Using Random
-
 const IS_ABSENT = 0;
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
@@ -17,7 +16,6 @@ else {
 }
 
 //UC-2-Calculate Daily Wage of Employee
-
 let empHrs = 0;
 switch(empCheck){
     case IS_PART_TIME:
@@ -33,3 +31,20 @@ let empWage = empHrs*WAGE_PER_HOUR;
 console.log("Emp wage = "+empWage)
 }
 
+//UC-3-Using Function to Check Emp Hours
+function getWorkingHours(empCheck) {
+    switch(empCheck){
+        case IS_PART_TIME:
+            return PART_TIME_HOURS;
+        case IS_FULL_TIME:
+            return FULL_TIME_HOURS;
+        default:
+            return 0;
+    }
+}
+
+let empCheck = Math.floor(Math.random()*10)%3;
+let empHrs = getWorkingHours(empCheck);
+let empWage = empHrs*WAGE_PER_HOUR;
+console.log("Emp hours: "+empHrs);
+console.log("Emp wage: "+empWage);
